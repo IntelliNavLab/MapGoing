@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              
+            android:orientation="vertical" 
+            android:layout_width="fill_parent" 
+            android:layout_height="fill_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TabHost
+            android:id="@+id/tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
+                </TabWidget>
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent" >
+
+                    <RelativeLayout
+                        android:id="@+id/relamap"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <com.amap.api.maps2d.MapView
+                            android:id="@+id/map"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+                        </com.amap.api.maps2d.MapView>
+
+                        <LinearLayout
+                            android:id="@+id/line1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:background="#aa101010" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" >
+
+                                <TextView
+                                    android:id="@+id/gpsstate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="GPS状态"
+                                    android:textColor="#ffffff"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/stepcount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="0步"
+                                    android:textColor="#ffffff"
+                                    android:textSize="28sp" />
+
+                                <TextView
+                                    android:id="@+id/sportstate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="步行状态"
+                                    android:textColor="#ffffff"
+                                    android:textSize="16sp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/line2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line1"
+                            android:background="#aa101010" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" >
+
+                                <TextView
+                                    android:id="@+id/alldistance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="总距离:"
+                                    android:textColor="#ffffff"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/speedtext"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="0.0m/s"
+                                    android:textColor="#ffffff"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/kaluli"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="卡路里:"
+                                    android:textColor="#ffffff"
+                                    android:textSize="14sp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <include
+                        android:id="@+id/view1"
+                        android:layout_height="match_parent"
+                        android:layout_width="fill_parent"                        
+                        layout="@layout/activity_my" />
+
+                    <include
+                        android:id="@+id/view3"
+                       android:layout_width="fill_parent"                        
+                        android:layout_height="match_parent"
+                        layout="@layout/activity_history" />
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:id="@+id/bottom_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal"
+                android:padding="7dp" >
+
+                <TextView
+                    android:id="@+id/sports"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#99dd55"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="8dp"
+                    android:text="运动"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/mapmap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#30303000"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="8dp"
+                    android:text="历史"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#30303000"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="8dp"
+                    android:text="我的"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/startstep"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_above="@+id/bottom_menu"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/start"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/mylocate"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_above="@+id/bottom_menu"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_button"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/location_selected" />
+
+            <ImageButton
+                android:id="@+id/map_out"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_above="@+id/mylocate"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_button"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/map_out" />
+
+            <ImageButton
+                android:id="@+id/map_in"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_above="@+id/map_out"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_button"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/map_in" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+     
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.graduate.mapgoing.util.BounceScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:text="0.4" />
+
+                <Button
+                    android:id="@+id/suoding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="锁定" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/walkratio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="步行" />
+
+                <RadioButton
+                    android:id="@+id/carratio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="非步行" />
+            </RadioGroup>
+
+            <Switch
+                android:id="@+id/showronghe"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:checked="true"
+                android:textOff="融合路线隐藏"
+                android:textOn="融合路线显示" />
+
+            <Switch
+                android:id="@+id/showgps"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:checked="true"
+                android:textOff="GPS路线隐藏"
+                android:textOn="GPS路线显示" />
+
+            <Switch
+                android:id="@+id/showpdr"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:checked="true"
+                android:textOff="PDR或惯性导航路线隐藏"
+                android:textOn="PDR或惯性导航路线显示" />
+
+        </LinearLayout>
+    </com.graduate.mapgoing.util.BounceScrollView>
+
+</LinearLayout>

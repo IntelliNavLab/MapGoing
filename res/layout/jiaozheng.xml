@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/controltitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#303030" >
+
+        <RelativeLayout
+            android:id="@+id/titletitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="false"
+            android:layout_centerInParent="true" >
+
+            <TextView
+                android:id="@+id/jiaofanhui"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableLeft="@drawable/back"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="返回"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/wancheng"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
+                android:text="完成"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="传感器校正"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <com.graduate.mapgoing.util.BounceScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:scrollbarStyle="outsideInset" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:id="@+id/state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <RadioButton
+                    android:id="@+id/jingzhi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="静止状态校正"
+                    android:textColor="#35acf6" />
+
+                <RadioButton
+                    android:id="@+id/shouwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手握状态校正"
+                    android:textColor="#35acf6" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/zhidao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="    请尽可能将手机水平静止放置（保持左右倾角，前后倾角均为0°），然后点击“开始校正”按钮，保持静止10s自动完成校正，点击“校正完成”返回"
+                        android:textColor="#35acf6"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/zuoyou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="左右倾角:0°"
+                        android:textColor="#35acf6"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/qianhou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="前后倾角:0°"
+                        android:textColor="#35acf6"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/accX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="X轴加速度:"
+                        android:textColor="#35acf6"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="#35acf6"
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/accY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Y轴加速度:"
+                        android:textColor="#35acf6"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#35acf6"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/accZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Z轴加速度:"
+                        android:textColor="#35acf6"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/z"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="0"
+                        android:textColor="#35acf6"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <EditText
+                        android:id="@+id/dataname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:text="1" >
+
+                        <requestFocus />
+                    </EditText>
+
+                    <Button
+                        android:id="@+id/jiaozheng"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:background="#ccf8bb"
+                        android:text="开  始  采  集" />
+
+                    <Button
+                        android:id="@+id/jieshucaiji"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#ccf8bb"
+                        android:text="结束采集 " />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/resultaccx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:text="X轴加速度随机误差均值：0，方差：0"
+                    android:textColor="#35acf6" />
+
+                <TextView
+                    android:id="@+id/resultaccy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Y轴加速度随机误差均值：0，方差：0"
+                    android:textColor="#35acf6" />
+
+                <TextView
+                    android:id="@+id/resultaccz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Z轴加速度随机误差均值：0，方差：0"
+                    android:textColor="#35acf6" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.graduate.mapgoing.util.BounceScrollView>
+
+</LinearLayout>
